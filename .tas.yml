@@ -1,0 +1,57 @@
+---
+postMerge :
+  preRun: 
+    command:
+      - yarn --frozen-lockfile
+      - yarn build
+      
+  
+  subModules:          #Not to be changed
+      
+        
+      - name: pool      
+        path : "./packages/pool"
+        pattern: 
+          - "./src/schema.test.ts"
+        
+        framework : jest
+
+        
+        configFile : "./jest.config.js"
+        
+        
+      - name: common      
+        path : "./packages/common/"
+        pattern: 
+          - "./test/*.spec.ts"
+ 
+        
+        framework : jest
+        
+        
+      - name: serum      
+        path : "./packages/serum"
+        pattern: 
+          - "./src/*.test.ts"
+        
+        framework : jest
+        
+        configFile : "./jest.config.js"
+        
+        
+      - name: spl-token-swap     
+        path : "./packages/spl-token-swap"
+        pattern: 
+          - "./test/*.spec.ts"
+ 
+        
+        framework : jest
+
+      
+        
+      
+        
+
+  
+version : 2.0.1
+# nodeVersion : 12.22.12
