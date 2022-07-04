@@ -32,7 +32,7 @@ postMerge :
       - name: serum      
         path : "./packages/serum"
         pattern: 
-          - "./src/*.test.ts"
+          - "./src/*.test.js"
         
         framework : jest
         
